@@ -18,7 +18,7 @@ const About = () => {
   const features = [
     {
       icon: <Users className="w-6 h-6" />,
-      title: '6+ Years of Equity Experience',
+      title: '10+ Years of Equity Experience',
       description: 'Hands-on participation in Indian equity markets across cycles.',
     },
     {
@@ -82,7 +82,7 @@ const About = () => {
           </h1>
 
           <p className="text-slate-600 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed">
-            Varun Kumar is a SEBI Registered Research Analyst with 6+ years of equity market
+            Varun Kumar is a SEBI Registered Research Analyst with 10+ years of equity market
             experience, focused on disciplined, transparent research that helps investors think long-term
             and act with clarity.
           </p>

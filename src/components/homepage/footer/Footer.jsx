@@ -80,7 +80,7 @@ const Footer = () => {
 
   const stats = [
     { label: 'SEBI Reg.', value: 'INH', icon: <Award className="w-4 h-4" /> },
-    { label: 'Years Exp.', value: '6+', icon: <Users className="w-4 h-4" /> },
+    { label: 'Years Exp.', value: '10+', icon: <Users className="w-4 h-4" /> },
     { label: 'Category', value: 'Research', icon: <Shield className="w-4 h-4" /> },
   ];
 
@@ -102,7 +102,7 @@ const Footer = () => {
             </div>
 
             <p className="text-slate-300 mb-6 leading-relaxed text-sm">
-              A research-driven, transparent and disciplined equity research practice — built on 6+
+              A research-driven, transparent and disciplined equity research practice — built on 10+
               years of market experience and run within SEBI Research Analyst regulations.
             </p>
 

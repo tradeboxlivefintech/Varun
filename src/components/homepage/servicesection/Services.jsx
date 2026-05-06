@@ -16,7 +16,7 @@ const services = [
     icon: <LineChart className="w-6 h-6" />,
     title: 'Equity Research',
     points: [
-      'Stock-level fundamental analysis',
+      'Fundamental and technical Analysis',
       'Sector outlook & relative views',
       'Earnings & valuation tracking',
     ],

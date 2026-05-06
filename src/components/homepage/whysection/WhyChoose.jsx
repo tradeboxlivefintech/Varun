@@ -10,7 +10,7 @@ const items = [
   },
   {
     icon: <BadgeCheck className="w-5 h-5" />,
-    title: '6+ Years of Markets',
+    title: '10+ Years of Markets',
     desc: 'Hands-on experience across multiple equity market cycles.',
   },
   {

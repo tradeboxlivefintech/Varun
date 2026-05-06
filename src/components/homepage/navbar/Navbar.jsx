@@ -18,7 +18,7 @@ const navItems = [
 
 const announcements = [
   '📈 SEBI Registered Research Analyst — INH000024833',
-  '📊 6+ Years of Equity Market Research Experience',
+  '📊 10+ Years of Equity Market Research Experience',
   '🔔 Subscribe for disciplined, research-driven market insights',
   '📞 Reach Compliance Officer: 9084662719',
 ];

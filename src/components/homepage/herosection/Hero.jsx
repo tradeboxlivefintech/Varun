@@ -22,7 +22,7 @@ const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 const slides = [
   {
     subtitle: 'RESEARCH · DISCIPLINE · TRANSPARENCY',
-    title: 'Smarter Equity Decisions, Backed by 6+ Years of Market Research',
+    title: 'Smarter Equity Decisions, Backed by 10+ Years of Market Research',
     quote: 'Investing is a long game — research is your edge.',
   },
   {
@@ -123,7 +123,7 @@ const Hero = () => {
               <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-8">
                 I&apos;m <span className="text-white font-semibold">Varun Kumar</span>, a SEBI Registered
                 Research Analyst (
-                <span className="text-emerald-400 font-semibold">INH000024833</span>) with 6+ years of
+                <span className="text-emerald-400 font-semibold">INH000024833</span>) with 10+ years of
                 hands-on equity market experience — helping investors approach the market with structure,
                 research and risk discipline.
               </p>
@@ -154,7 +154,7 @@ const Hero = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto lg:mx-0">
                 {[
-                  { icon: TrendingUp, value: '6+', label: 'Years Experience' },
+                  { icon: TrendingUp, value: '10+', label: 'Years Experience' },
                   { icon: BarChart3, value: 'INH000024833', label: 'SEBI RA' },
                   { icon: Users, value: '100%', label: 'Research Driven' },
                 ].map((s, i) => (
@@ -226,7 +226,7 @@ const Hero = () => {
                     </div>
                     <div className="bg-white/5 border border-white/10 rounded-lg px-3 py-2">
                       <div className="text-slate-400 text-[11px] uppercase tracking-wider">Experience</div>
-                      <div className="text-white font-semibold">6+ Years</div>
+                      <div className="text-white font-semibold">10+ Years</div>
                     </div>
                     <div className="col-span-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
                       <div className="text-slate-400 text-[11px] uppercase tracking-wider">Reg. No.</div>

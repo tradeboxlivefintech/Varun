@@ -7,7 +7,7 @@ export const metadata = {
 const blocks = [
   {
     title: 'About the Analyst',
-    text: 'This website is operated by Varun Kumar, a SEBI Registered Research Analyst (Registration No. INH000024833, Type: Individual). The analyst has 6+ years of equity market experience and provides research-driven, transparent and disciplined market insights.',
+    text: 'This website is operated by Varun Kumar, a SEBI Registered Research Analyst (Registration No. INH000024833, Type: Individual). The analyst has 10+ years of equity market experience and provides research-driven, transparent and disciplined market insights.',
   },
   {
     title: 'Nature of Information',

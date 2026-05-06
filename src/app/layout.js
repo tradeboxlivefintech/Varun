@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "SEBI RA Varun Kumar | Research Analyst | INH000024833",
   description:
-    "SEBI Registered Research Analyst Varun Kumar (INH000024833) - 6+ years of equity market experience providing research-driven, transparent and disciplined market insights.",
+    "SEBI Registered Research Analyst Varun Kumar (INH000024833) - 10+ years of equity market experience providing research-driven, transparent and disciplined market insights.",
 };
 
 export default function RootLayout({ children }) {
