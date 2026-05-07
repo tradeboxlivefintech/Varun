@@ -103,7 +103,7 @@ const About = () => {
 
               <div className="bg-gradient-to-r from-sky-50 to-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
                 <p className="text-slate-800 italic">
-                  &ldquo;Having equity market experience of 6 years, my approach is simple — clear
+                  &ldquo;Having equity market experience of 10 years, my approach is simple — clear
                   analysis, ethical practices, and a long-term view of the market. The goal isn&apos;t to
                   predict every move; it&apos;s to stay disciplined through every cycle.&rdquo;
                 </p>
