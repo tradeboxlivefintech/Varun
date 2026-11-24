@@ -24,50 +24,24 @@ const Footer = () => {
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
     { name: 'Compliance', href: '/compliance' },
+    { name: 'Legal', href: '/disclaimer' },
   ];
 
   const legalLinks = [
     {
-      name: 'Complaints Data',
-      href: '/complaints-data',
+      name: 'Grievance Redressal',
+      href: '/compliance',
       icon: <FileText className="w-4 h-4" />,
-      details: 'Monthly & annual disposal data',
-    },
-    {
-      name: 'Complaints Redressal',
-      href: '/complaint-redressal',
-      icon: <FileText className="w-4 h-4" />,
-      details: 'Grievance redressal procedure',
-    },
-    {
-      name: 'Escalation Matrix',
-      href: '/escalation-matrix',
-      icon: <FileText className="w-4 h-4" />,
-      details: 'Designated officials & contact matrix',
+      details: 'Submit your complaints and feedback',
     },
     {
       name: 'Investor Charter',
-      href: '/investor-charter',
+      href: '/compliance#charter',
       icon: <Scale className="w-4 h-4" />,
     },
     {
       name: 'Disclaimer',
       href: '/disclaimer',
-      icon: <Shield className="w-4 h-4" />,
-    },
-    {
-      name: 'Terms & Conditions (MITC)',
-      href: '/terms-and-conditions',
-      icon: <Shield className="w-4 h-4" />,
-    },
-    {
-      name: 'Standard Disclosures',
-      href: '/standard-disclosures',
-      icon: <Award className="w-4 h-4" />,
-    },
-    {
-      name: 'AML Policy',
-      href: '/aml-policy',
       icon: <Shield className="w-4 h-4" />,
     },
   ];
@@ -293,15 +267,11 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 text-xs sm:text-sm text-slate-400 order-3">
-            <Link href="/terms-and-conditions" className="hover:text-emerald-300 transition">Terms</Link>
-            <span className="text-slate-700">•</span>
             <Link href="/disclaimer" className="hover:text-emerald-300 transition">Disclaimer</Link>
             <span className="text-slate-700">•</span>
-            <Link href="/investor-charter" className="hover:text-emerald-300 transition">Charter</Link>
+            <Link href="/compliance" className="hover:text-emerald-300 transition">Compliance</Link>
             <span className="text-slate-700">•</span>
-            <Link href="/complaints-data" className="hover:text-emerald-300 transition">Complaints Data</Link>
-            <span className="text-slate-700">•</span>
-            <Link href="/escalation-matrix" className="hover:text-emerald-300 transition">Escalation Matrix</Link>
+            <Link href="/contact" className="hover:text-emerald-300 transition">Contact</Link>
           </div>
         </div>
       </div>

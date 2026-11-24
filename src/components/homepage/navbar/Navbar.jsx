@@ -31,33 +31,12 @@ const Navbar = () => {
   const [isMobileLegalOpen, setIsMobileLegalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef(null);
-  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Graceful hover handlers so moving between button and menu never flickers or closes
-  const handleMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setIsLegalDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
-      setIsLegalDropdownOpen(false);
-    }, 180);
-  };
-
-  const handleDropdownToggle = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setIsLegalDropdownOpen((prev) => !prev);
-  };
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -70,16 +49,15 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+
+
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setIsMobileLegalOpen(false);
   };
 
   const isLegalActive = () => {
-    return (
-      legalItems.some((item) => pathname.startsWith(item.href)) ||
-      pathname.startsWith('/compliance')
-    );
+    return legalItems.some((item) => pathname.startsWith(item.href));
   };
 
   const isActive = (href) => {
@@ -167,16 +145,28 @@ const Navbar = () => {
                 <span className="relative z-10">SERVICES</span>
               </Link>
 
+              <Link
+                href="/compliance"
+                className={`relative px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium ${
+                  isActive('/compliance')
+                    ? 'text-white'
+                    : 'text-slate-700 hover:text-sky-700 hover:bg-slate-50'
+                }`}
+              >
+                {isActive('/compliance') && (
+                  <span className="absolute inset-0 bg-gradient-to-r from-sky-600 to-emerald-600 rounded-lg" />
+                )}
+                <span className="relative z-10">COMPLIANCE</span>
+              </Link>
+
               {/* Legal Dropdown */}
               <div
-                className="relative"
+                className="relative group"
                 ref={dropdownRef}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
               >
                 <button
                   type="button"
-                  onClick={handleDropdownToggle}
+                  onClick={() => setIsLegalDropdownOpen((prev) => !prev)}
                   className={`relative flex items-center gap-1.5 px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium cursor-pointer ${
                     isLegalActive() || isLegalDropdownOpen
                       ? 'text-white'
@@ -185,51 +175,48 @@ const Navbar = () => {
                   aria-expanded={isLegalDropdownOpen}
                 >
                   {(isLegalActive() || isLegalDropdownOpen) && (
-                    <span className="absolute inset-0 bg-gradient-to-r from-sky-600 to-emerald-600 rounded-lg" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-sky-600 to-emerald-600 rounded-lg pointer-events-none" />
                   )}
-                  <span className="relative z-10 flex items-center gap-1.5 select-none">
+                  <span className="relative z-10 flex items-center gap-1.5 select-none pointer-events-none">
                     LEGAL
                     <FiChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        isLegalDropdownOpen ? 'rotate-180' : ''
+                        isLegalDropdownOpen ? 'rotate-180' : 'group-hover:rotate-180'
                       }`}
                     />
                   </span>
                 </button>
 
                 {/* Dropdown Menu Container */}
-                {isLegalDropdownOpen && (
-                  <div
-                    className="absolute top-full left-0 pt-2 w-64 z-50"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <div className="rounded-2xl bg-white border border-slate-200/90 shadow-2xl py-2">
-                      <div className="space-y-0.5">
-                        {legalItems.map((item) => {
-                          const active = pathname === item.href;
-                          return (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              onClick={() => {
-                                if (timeoutRef.current) clearTimeout(timeoutRef.current);
-                                setIsLegalDropdownOpen(false);
-                              }}
-                              className={`block px-4 py-2.5 text-xs xl:text-sm font-medium transition cursor-pointer ${
-                                active
-                                  ? 'bg-sky-50 text-sky-700 font-semibold'
-                                  : 'text-slate-700 hover:bg-slate-50 hover:text-sky-700'
-                              }`}
-                            >
-                              {item.name}
-                            </Link>
-                          );
-                        })}
-                      </div>
+                <div
+                  className={`absolute top-full left-0 pt-2 w-64 z-50 transition-all duration-200 ${
+                    isLegalDropdownOpen
+                      ? 'opacity-100 visible pointer-events-auto translate-y-0'
+                      : 'opacity-0 invisible pointer-events-none -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0'
+                  }`}
+                >
+                  <div className="rounded-2xl bg-white border border-slate-200/90 shadow-2xl py-2">
+                    <div className="space-y-0.5">
+                      {legalItems.map((item) => {
+                        const active = pathname === item.href;
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setIsLegalDropdownOpen(false)}
+                            className={`block px-4 py-2.5 text-xs xl:text-sm font-medium transition cursor-pointer ${
+                              active
+                                ? 'bg-sky-50 text-sky-700 font-semibold'
+                                : 'text-slate-700 hover:bg-slate-50 hover:text-sky-700'
+                            }`}
+                          >
+                            {item.name}
+                          </Link>
+                        );
+                      })}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               <Link
@@ -366,6 +353,18 @@ const Navbar = () => {
                 }`}
               >
                 SERVICES
+              </Link>
+
+              <Link
+                href="/compliance"
+                onClick={closeMobileMenu}
+                className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition ${
+                  isActive('/compliance')
+                    ? 'bg-gradient-to-r from-sky-600 to-emerald-600 text-white shadow'
+                    : 'text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                COMPLIANCE
               </Link>
 
               {/* Mobile Legal Accordion */}
