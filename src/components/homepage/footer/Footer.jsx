@@ -24,6 +24,7 @@ const Footer = () => {
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
     { name: 'Compliance', href: '/compliance' },
+    { name: 'Legal', href: '/disclaimer' },
   ];
 
   const legalLinks = [
